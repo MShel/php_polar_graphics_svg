@@ -184,6 +184,7 @@ class svg_graph implements svg_graphics
     
     public function draw_polyline()
     {
+	  $graph = "";
       for ($i = 0; $i<count($this->x_dots); $i++)  
       {  
           $x = $this->x_dots[$i]+$this->m_x;

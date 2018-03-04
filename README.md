@@ -1,6 +1,25 @@
-# php_polar_graphics_svg
-This class can render a math formula as a SVG vectorial chart.  It takes a string with a math 
-formula and creates a chart on which it draws a set of lines between consecutive points for the axes. 
-It may use cartesian or polar coordinates.  The class returns the chart data in SVG format.
-It can also render a chart in SVG format from an array of coordinates passed to the class. 
-The size of the chart and the size of the steps between each point in the chart are configurable parameters.
+# PolarGraphicsSvg
+
+This class can render a math formula as a SVG vector polyline chart.
+
+See example below:
+
+```$php
+use \svg\Graph;
+
+$data = [
+    'canvas_width' => 300,
+    'canvas_height' => 300,
+    'func' => function ($x) {
+        return 100 * sin(8 * $x);
+    },
+    'brush_color' => 'red',
+    'brush_width' => 0.1,
+    'step' => 1
+];
+
+$graph = new Graph($data);
+$graph->render_graph();
+
+```
+
